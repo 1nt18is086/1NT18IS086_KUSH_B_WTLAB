@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educattion system of two colleges</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>ENTER ATTENDANCE OF STUDENTS BELONGING TO SHARDA</p>
+    <input type="text" id="sh" placeholder="Enter Attendance" width="200px">
+    <br>
+    <p>ENTER ATTENDANCE OF STUDENTS BELONGING TO NITTE</p>
+    <input type="text" id="ni" placeholder="Enter Attendance" width="200px">
+    <br>
+    <br>
+    <button onclick="myfunc()">check</button>
+    <p>Minimum attendance criteria is 75%</p>
+    <p id="demo"></p>
+    <p>ENTER MARKS OF STUDENTS BELONGING TO SHARDA</p>
+    <input type="text" id="sh1" placeholder="Enter Marks" width="200px">
+    <br>
+    <p>ENTER MARKS OF STUDENTS BELONGING TO NITTE</p>
+    <input type="text" id="ni1" placeholder="Enter Marks" width="200px">
+    <br>
+    <br>
+    <button onclick="myfunc1()">check</button>
+    <p>Passing Marks for each subject is 30</p>
+    <p id="pass"></p>
+
+
+    <script>
+    function myfunc()
+    {
+    var x = document.getElementById("sh").value;
+    var y = document.getElementById("ni").value;
+
+    var n = x.split(" ");
+    var m = y.split(" ");
+    var c1=n;
+    var c2 = m;
+    console.log(c1);
+    var passnoc1=0;
+    var passnoc2=0;
+    for(i=0;i<c1.length;i++)
+    {
+        if(c1[i]>=75)
+        {
+          passnoc1=passnoc1+1;
+        }
+        if(c2[i]>=75)
+        {
+           passnoc2=passnoc2+1;
+        }
+    }
+    if(passnoc1>passnoc2)
+    {
+        document.getElementById("demo").innerHTML = "Sharda has better Attendance than Nitte";
+    }
+    else if(passnoc2>passnoc1)
+    {
+        document.getElementById("demo").innerHTML = "Nitte has better Attendance than Sharda";
+    }
+    else{
+        document.getElementById("demo").innerHTML = "Both college have same Attendance";
+    }
+}
+
+function myfunc1()
+    {
+    var x = document.getElementById("sh1").value;
+    var y = document.getElementById("ni1").value;
+
+    var n = x.split(" ");
+    var m = y.split(" ");
+    var c1=n;
+    var c2 = m;
+    var sum1=0;
+    var sum2=0;
+    for(i=0;i<c1.length;i++)
+    {
+        sum1 += c1[i];
+        sum2 += c2[i];
+    }
+    if(sum1>sum2)
+    {
+        document.getElementById("pass").innerHTML = "Sharda has better result on basis of total marks";
+    }
+    else if(sum1<sum2)
+    {
+        document.getElementById("pass").innerHTML = "Nitte has better result on basis of total marks";
+    }
+    else
+    {
+        document.getElementById("pass").innerHTML = "Both the college have same result on basis of total marks";
+    }
+}
+
+    </script>
+
+</body>
+</html>
